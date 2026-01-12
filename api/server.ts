@@ -17,20 +17,20 @@ const handler = createMcpHandler((server) => {
     "get_weather",
     "Get the current weather at a location",
     {
-      latitude: z.number(),
-      longitude: z.number(),
+      
       city: z.string(),
     },
-    async ({ latitude, longitude, city }) => {
+    async ({ city }) => {
       const response = await fetch(
-        `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weathercode,relativehumidity_2m&timezone=auto`,
+        'https://api.weatherapi.com/v1/current.json?key=6c8bed0655404fa4bbe85931261201&q=${city}&aqi=no',
+       
       );
       const weatherData = await response.json();
       return {
         content: [
           {
             type: "text",
-            text: `🌤️ Weather in ${city}: ${weatherData.current_units.temperature_2m}°C, Humidity: ${weatherData.current_units.relativehumidity_2m}%`,
+            text: `🌤️ Weather in ${city}: ${weatherData.current.temp_c}°C, Humidity: ${weatherData.humidity}%`,
           },
         ],
       };
