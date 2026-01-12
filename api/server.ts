@@ -30,7 +30,7 @@ const handler = createMcpHandler((server) => {
         content: [
           {
             type: "text",
-            text: `🌤️ Weather in ${city}: ${weatherData.current.temperature_2m}°C, Humidity: ${weatherData.current.relativehumidity_2m}%`,
+            text: `🌤️ Weather in ${city}: ${weatherData.current_units.temperature_2m}°C, Humidity: ${weatherData.current_units.relativehumidity_2m}%`,
           },
         ],
       };
