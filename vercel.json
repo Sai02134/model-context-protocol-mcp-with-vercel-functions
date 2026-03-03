@@ -1,4 +1,10 @@
 {
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/" }
+  ]
+}
+{
   "rewrites": [{ "source": "/(.+)", "destination": "/api/server" }],
   "functions": {
     "api/server.ts": {
