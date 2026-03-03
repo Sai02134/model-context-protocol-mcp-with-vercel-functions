@@ -1,10 +1,7 @@
 {
   "routes": [
     { "handle": "filesystem" },
-
     { "src": "/api/(.*)", "dest": "/api/server" },
-    { "src": "/.well-known/(.*)", "dest": "/api/server" },
-
-    { "src": "/(.*)", "dest": "/public/index.html" }
+    { "src": "/.well-known/(.*)", "dest": "/api/server" }
   ]
 }
