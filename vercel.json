@@ -1,10 +1,10 @@
 {
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/server" }
-  ],
-  "functions": {
-    "api/server.ts": {
-      "maxDuration": 60
-    }
-  }
+  "routes": [
+    { "handle": "filesystem" },
+
+    { "src": "/api/(.*)", "dest": "/api/server" },
+    { "src": "/.well-known/(.*)", "dest": "/api/server" },
+
+    { "src": "/(.*)", "dest": "/public/index.html" }
+  ]
 }
