@@ -4,4 +4,7 @@
     { "src": "/api/(.*)", "dest": "/api/server" },
     { "src": "/.well-known/(.*)", "dest": "/api/server" }
   ]
+  functions": {
+    "api/server.ts": {
+      "maxDuration": 60
 }
